@@ -1,0 +1,217 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --tma-input-label-colour: theme('colors.gray.600');
+    --tma-input-border-colour: theme('colors.gray.300');
+    --tma-input-placeholder-colour: theme('colors.gray.400');
+    --tma-input-invalid-label-colour: theme('colors.red.600');
+    --tma-input-invalid-border-colour: theme('colors.red.300');
+    --tma-input-focus-border-colour: theme('colors.blue.300');
+    --tma-input-focus-label-colour: var(--tma-input-label-colour);
+    --tma-input-selected-colour: theme('colors.blue.600');
+
+    --tma-input-default-heading-space: theme('spacing.5');
+
+    --tma-white-check: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 16' fill='%23fff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3E%3C/svg%3E");
+    --tma-black-check: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 16' fill='%23000' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3E%3C/svg%3E");
+
+    --tma-white-dot: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 16' fill='%23fff' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='8' cy='8' r='3' /%3E%3C/svg%3E");
+    --tma-black-dot: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 16' fill='%23000' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='8' cy='8' r='3' /%3E%3C/svg%3E");
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+  .custom-transition {
+    @apply transition-all duration-300 ease-in-out;
+  }
+
+  @font-face {
+    font-family: 'squid';
+    src: url('/fonts/squids.otf');
+  }
+}
+.textXLarge {
+  @apply text-3xl font-semibold sm:text-4xl md:text-5xl 2xl:text-6xl;
+}
+
+.textLarge {
+  @apply text-3xl 2xl:text-4xl;
+}
+
+.textMedium {
+  @apply text-xl sm:text-2xl 2xl:text-3xl;
+}
+
+.textSmall {
+  @apply text-base font-light;
+}
+
+@responsive {
+  .glow {
+    box-shadow: 0px 0px 50px -10px #7bfafc;
+  }
+  .pin-center {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .pin-x-center {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .pin-y-center {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+.linear-wipe {
+  background: linear-gradient(
+    to right,
+    #fff 20%,
+    #7bfafc 40%,
+    #7bfafc 60%,
+    #fff 80%
+  );
+  background-size: 200% auto;
+
+  color: #000;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: shine 6s linear infinite;
+  @keyframes shine {
+    to {
+      background-position: 200% center;
+    }
+  }
+}
+.hamburger-icon span {
+  @apply absolute right-0 block w-full border-t-2 border-solid border-white opacity-100;
+  transform: rotate(0deg);
+  transition: all 0.3s ease-in-out;
+}
+
+.hamburger-icon.open span,
+.hamburger-icon:hover span {
+  @apply w-full;
+}
+
+.hamburger-icon span:nth-child(1),
+.hamburger-icon span:nth-child(2),
+.hamburger-icon span:nth-child(3) {
+  top: 9px;
+}
+
+.hamburger-icon > span:nth-child(1) {
+  @apply top-0;
+}
+
+.hamburger-icon > span:nth-child(3) {
+  top: 18px;
+}
+
+.service-summary li {
+  @apply text-2xl font-bold;
+}
+
+.hamburger-icon.open span:nth-child(1) {
+  top: 10px;
+  transform: rotate(135deg);
+}
+
+.hamburger-icon.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-icon.open span:nth-child(3) {
+  top: 10px;
+  transform: rotate(-135deg);
+}
+
+.NoiseBackground {
+  position: fixed;
+  z-index: 0;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 120vh;
+  overflow: hidden;
+  pointer-events: none;
+}
+.NoiseBackground__Noise {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.NoiseBackground__Noise:after {
+  content: '';
+  position: absolute;
+  top: -10rem;
+  left: -10rem;
+  width: calc(100% + 20rem);
+  height: calc(100% + 20rem);
+  animation: noise 1s steps(2) infinite;
+  background-image: url(/noise.jpg);
+  background-position: 50%;
+  background-size: 150px;
+  will-change: transform;
+}
+@media (min-width: 1200px) {
+  .NoiseBackground__Noise:after {
+    background-size: 300px;
+  }
+}
+.NoiseBackground__Masthead {
+  position: absolute;
+  width: 100%;
+  height: 120vh;
+  background-blend-mode: exclusion;
+  mix-blend-mode: exclusion;
+}
+
+@keyframes noise {
+  0% {
+    transform: translate3d(0, 9rem, 0);
+  }
+  10% {
+    transform: translate3d(-1rem, -4rem, 0);
+  }
+  20% {
+    transform: translate3d(-8rem, 2rem, 0);
+  }
+  30% {
+    transform: translate3d(9rem, -9rem, 0);
+  }
+  40% {
+    transform: translate3d(-2rem, 7rem, 0);
+  }
+  50% {
+    transform: translate3d(-9rem, -4rem, 0);
+  }
+  60% {
+    transform: translate3d(2rem, 6rem, 0);
+  }
+  70% {
+    transform: translate3d(7rem, -8rem, 0);
+  }
+  80% {
+    transform: translate3d(-9rem, 1rem, 0);
+  }
+  90% {
+    transform: translate3d(6rem, -5rem, 0);
+  }
+  to {
+    transform: translate3d(-7rem, 0, 0);
+  }
+}
