@@ -2,12 +2,14 @@
   <transition name="fade">
     <div
       v-if="elementVisible"
-      class="fixed top-0 z-50 flex min-h-screen w-full items-end justify-center overflow-hidden bg-[#201f1f]"
+      class="fixed top-0 flex min-h-screen w-full items-end justify-center overflow-hidden bg-[#201f1f]"
     >
-      <div class="absolute inset-0 z-40 bg-black opacity-50" />
+      <div class="absolute inset-0 z-30 bg-black opacity-80" />
 
       <div class="w-full">
-        <img src="/11.png" alt="" class="relative z-50 w-full" />
+        <div class="mx-auto max-w-4xl">
+          <img src="/11.png" alt="" class="relative z-50 w-full" />
+        </div>
         <div class="absolute top-0 bottom-0 w-full">
           <img
             src="/bg.gif"
@@ -29,7 +31,7 @@
 export default {
   data() {
     return {
-      elementVisible: true,
+      elementVisible: false,
     };
   },
 
