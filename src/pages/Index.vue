@@ -24,7 +24,7 @@
       </div>
     </div>
     <div class="NoiseBackground">
-      <div class="NoiseBackground__Noise"></div>
+      <div class="NoiseBackground__Noise" />
     </div>
     <AtomSection
       tp="large"

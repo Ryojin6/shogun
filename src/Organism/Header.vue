@@ -19,19 +19,25 @@
           class="bg-n-pink px-6 py-2 font-bold hover:bg-white hover:text-n-pink"
           >Premint</a
         >
+        <a
+          href="https://mint.shogunapes.xyz/"
+          target="_Blank"
+          class="bg-white px-6 py-2 font-bold text-n-pink hover:bg-n-pink hover:text-white"
+          >Mint Now</a
+        >
         <AtomIconTwitter
           link="https://twitter.com/TheApeSamurai"
           class="text-white hover:text-n-pink"
         />
 
-        <!-- <AtomIconEtherscan
-          link="https://etherscan.io/address/0x7ac8D18d6FbE083008b615873004826AE5F35F15#code"
+        <AtomIconEtherscan
+          link="https://etherscan.io/address/0x97032cc8acb942626fe640fb2e73a123852ad451"
           class="text-white hover:text-n-pink"
         />
         <AtomIconOpensea
-          link="https://opensea.io/collection/bored-apes-ai-club"
+          link="https://opensea.io/collection/shogun-apes-samurai"
           class="text-white hover:text-n-pink"
-        /> -->
+        />
       </div>
     </div>
   </header>
